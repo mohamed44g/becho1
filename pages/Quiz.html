@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/Quiz.css">
+    <title>Quiz</title>
+</head>
+<body class="dark-theme">
+    <div id="mySidenav" class="sidenav">
+        <div class="side-content">
+            <div href="" class="closebtn" onclick="closeNav()">&times;</div>
+            <ul class="quiz-links">
+                <li><a href="#">فديوهات</a></li>
+                <li><a href="#">اسئلة عامة</a></li>
+                <li><a href="#">امتحانات</a></li>
+                <li><a href="#">كويزات</a></li>
+            </ul>
+            <hr>
+
+            <a href="../index.html"><button class="btn-back-side">عودة</button></a>
+            <div class="mood">
+                <button class="btn-dark active-btn">dark <img src="../images/icon-moon.svg" alt="icon"></button>
+                <button class="btn-light">light <img src="../images/icon-sun.svg" alt="icon"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="con">
+        <div class="navpar">
+            <div class="logo">
+                <img src="../images/H Logotype Orange copy.png" alt="logo">
+            </div>
+    
+            <div class="nav-icons">
+                <a href="../index.html"><button class="btn-back">عودة</button></a>
+                <img onclick="openNav()" class = "Menu-icon" src="../images/icons8-menu-96 (4).png" alt="MenuIcon">
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="Questions-con">
+            <div class="Questions-header">
+                <p>12 من 25</p>
+                <div>
+                    <span class = "time" dir="ltr">20 : 00</span>
+                    <img id = "icon-white" src="../Images/icons8-time-90.png" alt="icon">
+                    <img id = "icon-black" src="../Images/icons8-time-48 (1).png" alt="icon">
+                </div>
+            </div>
+
+            <hr>
+            <div class="Question">
+                <p>اى من فروع الجيولوجيا يدرس توزيع العناصر فى القشرة الارضية ؟</p>
+            </div>
+
+            <div class="answer">
+                <form >
+                    <input class="answer" type="radio" name="answer" id="answer1">
+                    <label class="answer-label" for="answer1">علم المعادن والبلورات</label><br>
+
+                    <input class="answer" type="radio" name="answer" id="answer2">
+                    <label class="answer-label" for="answer2">علم طبقات الارض</label><br>
+
+                    <input class="answer" type="radio" name="answer" id="answer3">
+                    <label class="answer-label" for="answer3">الجيوكيماء</label><br>
+                    
+
+                    <input class="answer" type="radio" name="answer" id="answer4">
+                    <label class="answer-label" for="answer4">الجيوفيزياء</label><br>
+                    <hr>
+
+                    <div class="Questions-footer">
+                        <input type="submit" value="اجابة">
+                        <div class="icons">
+                            <img src="../images/icons8-forward-100.png" alt="icon">
+                            <img src="../Images/icons8-back-60.png" alt="icon">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script>
+        const dark = document.querySelector(".btn-dark");
+        const light = document.querySelector(".btn-light");
+    
+        let theme = localStorage.getItem("theme");
+        if (theme != null) {
+            changeTheme(theme);
+        }
+        
+    
+        dark.addEventListener("click",function () {
+            let theme = "dark";
+            localStorage.setItem("theme",theme);
+            changeTheme(theme);
+        })
+    
+        light.addEventListener("click",function () {
+            let theme = "light";
+            localStorage.setItem("theme",theme);
+            changeTheme(theme);
+        })
+    
+        function changeTheme(theme) {
+            if (theme == "dark") {
+                document.body.className = "dark-theme";
+                light.classList.remove("active-btn");
+                dark.classList.add("active-btn");
+            } else {
+                document.body.className = "light-theme";
+                dark.classList.remove("active-btn");
+                light.classList.add("active-btn");
+            }
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").classList.add("side-width");
+            }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").classList.remove("side-width");
+        }
+    </script>
+</body>
+</html>

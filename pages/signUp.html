@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="../css/signIn.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <title>Sign In</title>
+</head>
+<body class="dark-theme">
+    <div class="bg"></div>
+
+    <div class="form-container-signup">
+        <div class="form-content">
+            <div class="form-icon">
+                <img src="../Images/icons8-user-100 (2).png" alt="Icon">
+            </div>
+            
+            <div class="form-title">
+                <h3>تسجيل جديد</h3>
+            </div>
+
+            <div class="form">
+                <form>
+                    <label class = "label" for="username">الاسم :</label><br>
+                    <input id = "username" type="text"><br>
+                    <label class = "label" for="password">البريد :</label><br>
+                    <input id = "password" type="email"><br>
+                    <label class = "label" for="password">رقم الموبايل :</label><br>
+                    <input id = "password" type="text"><br>
+                    <label class = "label" for="password">كلمة السر :</label><br>
+                    <input id = "password" type="password"><br>
+                    <label class = "label" for="male">ذكر</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label class = "label" for="male">انثى</label>
+                    <input type="radio" name="gender" id="female" value="female"><br>
+                    <input id = "submit-btn" type="submit" value="تسجيل">
+                </form>
+                <a href="signin.html">لديك حساب سجل دخول؟</a>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let theme = localStorage.getItem("theme");
+        if (theme != null) {
+            changeTheme(theme);
+        }
+        
+    
+        function changeTheme(theme) {
+            if (theme == "dark") {
+                document.body.className = "dark-theme";
+
+            } else {
+                document.body.className = "light-theme";
+            }
+        }
+
+    </script>
+</body>
+</html>
